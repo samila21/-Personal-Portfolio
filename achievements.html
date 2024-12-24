@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my achievements</title> 
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+ <!--Style-->
+<style>
+    @import url(‘https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap’);
+    
+    *{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;border: none;
+    text-transform: capitalize; transition: all .2s linear;
+    
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:5.5rem;
+    scroll-behavior: smooth; 
+   
+}
+
+/* --------------------------------------header section-------------------------------------- */
+
+header{
+    position: fixed;
+    top: 0;left: 0;right: 0;
+background: white;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    
+}
+header .logo{
+    color: var(--white);
+    font-size: 2.9rem;
+    font-weight: bolder;
+    color: red; 
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .6rem 1.9rem;
+    color: red; font-weight: bolder;
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+   background: red;
+   box-shadow:0 0 50px  rgba(255,0,0);
+}
+
+header .icons i, header .icons a
+{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 50%;
+    background:black;
+
+}
+
+
+
+header .icons i:hover,
+header .icons a:hover{
+color: white;
+background: red;
+box-shadow:0 0 50px  rgba(255,0,0);
+
+}
+
+
+header .icons #menu-bars{
+    display: none;
+}
+
+
+
+section{
+    padding: 2rem 9%;
+}
+section:nth-child(even){
+    background: white;
+}
+
+.home .home-slider .slide{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 9rem;
+}
+.home .home-slider .slide .content{
+    flex:2 2 45rem;
+
+}
+.home .home-slider .slide .image{
+    flex:1 1 45rem;
+}
+.home .home-slider .slide .image img{
+    width: 60%; border-radius: 20px;
+
+}
+.home .home-slider .slide .content span{
+    color: black;
+    font-size: 4rem;
+ 
+}
+   
+.home .home-slider .slide .content h3{
+    color: red;
+    font-size: 2.6rem;
+}
+
+.home .home-slider .slide .content p{
+
+color: gray;
+font-size: 2rem;
+padding: .5rem 0;
+line-height: 1.5;
+
+
+}
+.swiper-pagination-bullet-active{
+    background: red;
+}
+
+
+
+
+/*------------------------------------------Media query-------------------------------------------------*/
+
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+
+    }
+    header{
+        padding: 1rem 2rem ;
+
+
+    }
+    section{
+        padding: 2rem;
+
+      
+    }
+
+    .home{
+        padding: .2rem;
+
+margin: 4rem;   
+    }
+}
+
+
+
+
+@media(max-width:768px){
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: rgba(0,0,0,.2) solid;
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    }
+
+  
+header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+    header .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem ;
+        background: #eee; color: red;
+        font-size: 2rem;
+   
+
+    }
+}
+
+
+.home .home-slider .slide .content h3{
+  
+    font-size: 5rem;
+}
+@media(max-width:991px){
+    html{
+        font-size: 50%;
+        
+    }
+    .dishes .box-container .box img{
+        height: auto;
+width: 100%;
+    
+    }
+    .orders form .inputbox .input{
+        width: 100%;
+        }
+}
+
+   
+</style> 
+</head>
+<body>
+<!------------------------------------------Header Section------------------------------------------------------->
+
+    <header>
+        <a href="#" class="logo"> <i class="fas-fa-untensils">Jerlin J</i></a>
+      <nav class="navbar">
+          <a href="jerlin.html">Home</a>
+          <a href="jabout.html">About</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="service.html">Service</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+      </div>
+      </header>
+
+<!---------------------------------------------home section--------------------------------------------------------------->
+
+<section class="home" id="home">
+<div class="container home-slider">
+    <div class="swiper-wrapper wrapper">
+
+<!------------------------------------------one-------------------------------------------------------------------->
+
+        <div class="swiper-slide slide">
+<div class="content">
+    <span>My Achievements</span>
+    <h3>BEST OUTGOING STUDENT <Span class="year">2024</Span></h3>
+    <p>Awarded the prestigious <i>Best Outgoing Graduate 2024</i> at SNS Paramedical Institution for exemplary academic  performance, leadership and active participation in extracurricular activities. Domanstrated consistent dedication  to excellence in both academics and professional growth.Recognized for exceptional teamwork, innovative thinking  and commitment to institutional values.  Proven ability to inspire peers and contribute meaningfully to community initiatives. A role model who embodies the spirit of excellence and holistic development.</p>
+</div>
+<div class="image">
+    <img src="C:\Users\Welcome\Desktop\Project\Web Development\samlin\Images\achieve1.jpeg" alt="">
+</div>
+        </div>
+
+<!------------------------------------------two----------------------------------------------------------------->
+
+        <div class="swiper-slide slide">
+            <div class="content">
+                <span>My Achievements</span>
+                <h3>ALL ROUNDER PERFORMER  <Span class="year">2020-2023</Span></h3>
+                  <p>Recognized as the All-Rounder Performer from 2020 to 2023 for consistently excelling in academics, extracurricular activities, and leadership roles. Demonstrated exceptional versatility by balancing diverse responsibilities, including team projects, event coordination, and academic excellence. Proactively contributed to organizational growth through innovative ideas and collaborative efforts. Maintained a high standard of performance, earning accolades for dedication and adaptability. A proven track record of success highlights a commitment to personal and professional growth.</p>
+            </div>
+            <div class="image">
+                <img src="Images/achieve2.jpg"  alt="">
+            </div>
+                    </div>
+
+<!------------------------------------------three------------------------------------------------------------------->
+
+                    <div class="swiper-slide slide">
+                        <div class="content">
+                            <span>My Achievements</span>
+                            <h3>NATIONAL LEVEL DEBATE <Span class="year">2023</Span></h3>
+                            <p >I'm much glad and pleaseure to share my participation in debet which was organise by kalyanamaalai with the presence of Raja sir and bharathi baskar mam on 27/01/2024. which was an amazing experience and i felt much enthusiastic to move forward to achieve my goal.
+                        </div>
+                        <div class="image">
+                            <img src="C:\Users\Welcome\Desktop\Project\Web Development\samlin\Images\achieve3.jpeg" alt="">
+                        </div>
+                                </div>
+
+<!------------------------------------------four-------------------------------------------------------------------->                                
+
+                                <div class="swiper-slide slide">
+                                    <div class="content">
+                                        <span>My Achievements</span>
+                                        <h3>BEST SPEAKER AWARDED <Span class="year">2023</Span></h3>
+                  <p>The most mesmerizing moments which was done during TAMIL KANAVU event which was organised by our tamilnadu chief minister through all over state distric collector. Which was conducted SNS insitution the second round of tamil kanavu  event on 19/10/2023. i received a honour reward " BEST STUDENT ANSWER TO CHIEF GUEST" </p>
+                                    </div>
+                                    <div class="image">
+                                        <img src="Images/achieve4.jpg" alt="">
+                                    </div>
+                                            </div>
+    </div>
+<div class="swiper-pagination"></div>
+</div>
+</section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+
+        <script>
+
+let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector(".navbar")
+
+menu.onclick = () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active')
+}
+var swiper = new Swiper(".home-slider", {
+      spaceBetween: 140,
+      centeredSlides: true,
+      autoplay: {
+        delay: 7500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+     loop:true,
+    });     
+    
+        </script>
+</body>
+</html>

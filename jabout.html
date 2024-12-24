@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+@import url(‘https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap’);
+
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;border: none;
+    text-transform: capitalize; transition: all .2s linear;
+    
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:5.5rem;
+    scroll-behavior: smooth; 
+   
+}
+
+/*--------------------------------header section--------------------------------- */
+
+header{
+    position: fixed;
+    top: 0;left: 0;right: 0;
+background: white;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    
+}
+header .logo{
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: red; 
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .6rem 1.9rem;
+    color: red; font-weight: bolder;
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+   background: red;
+   box-shadow:0 0 50px  rgba(255,0,0);
+   
+
+}
+
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 50%;
+    background:black;
+
+}
+
+header .icons i:hover,
+header .icons a:hover{
+color: white;
+background: red;
+box-shadow:0 0 50px  rgba(255,0,0);
+
+}
+
+
+header .icons #menu-bars{
+    display: none;
+}
+
+/*-------------------------------------------------- about section--------------------------------- */
+
+#about{
+    padding: 88px 0;
+    
+
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;   
+}
+
+.about-col-1{
+    flex-basis: 35%;
+    
+}
+.about-col-1 img{
+    width: 72%; border-radius: 20px;
+    margin-left: 4rem; margin-top: 5rem;
+}
+
+
+
+
+.about-col-2{
+flex-basis: 65%; 
+}
+.sub-title{
+    font-size: 50px; text-align: center; color: red;
+
+}
+.about-col-2 .summery{
+    padding: 10px; line-height: 30px; font-size: 1.5rem;
+}
+
+.tab-title{
+    display: flex; margin: 20px 20px 40px;  
+}
+
+ .tab-links{
+    margin-right: 70px; font-size: 20px; font-weight: bolder; cursor: pointer; 
+    position: relative; 
+}
+.tab-links::after{
+  content: '';
+  width: 0; height: 3px; background: red; position: absolute; left: 0; bottom: -8px; transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+width: 50%;
+}
+.tab-contents ul li{
+margin: 10px; font-size: 17px; line-height: 18px; font-weight: bold; margin-top: 20px; color: rgb(2, 2, 90);
+}
+.tab-contents ul li span{
+    color: rgb(196, 4, 4); font-size: 19px; font-weight: bold; 
+}
+
+
+.tab-contents ul li .def{
+    margin-top: 10px; font-size: 1.4rem; color: rgb(97, 95, 95);
+}
+
+.tab-contents{
+    display: none;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+/*----------------------------media query------------------------------*/
+
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+
+    }
+    header{
+        padding: 1rem 2rem;
+
+    }
+    section{
+        padding: .2rem;
+
+        margin: 4rem;
+    }
+}
+
+
+
+
+@media(max-width:768px){
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: rgba(0,0,0,.2) solid;
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    }
+
+header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+    header .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem ;
+        background: #eee;
+        font-size: 2rem;
+
+    }
+    #about {
+  
+  font-size: 5.5rem;
+
+  margin-left: 20px; margin-right: 20px; font-weight: bold;
+}
+
+#about {
+  
+  font-size: 5rem;
+
+  margin-left: 20px; margin-right: 20px; font-weight: bold;
+}
+#about img{
+width: 100%; margin-left: 150px;
+}
+#about .sub-title, .summery {
+    margin-left: 50px;
+}
+}
+
+@media(max-width:991px){
+    html{
+        font-size: 50%;
+        
+    }
+    .dishes .box-container .box img{
+        height: auto;
+width: 100%;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<!-----------------------------------------------Header Section------------------------------------------------------------->
+
+    <header>
+        <a href="#" class="logo"> <i class="fas-fa-untensils">Jerlin J</i></a>
+      <nav class="navbar">
+          <a href="jerlin.html">Home</a>
+          <a href="jabout.html">About</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="service.html">Service</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+      </div>
+      </header>
+
+<!--------------------------------------------------About Section----------------------------------------------------->
+    
+<div id="about">
+<div class="container">
+    <div class="row">
+        <div class="about-col-1">
+<img src="Images/a1.jpg" alt="">
+        </div>
+        <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p class="summery">
+            As an enthusiastic Physical Therapist and Energitic Public speaker, I am Passionate about empowering individuala to achieve their best physical and mental well-being. With a deep understanding of human movement and a knack for engaging audiences, I combine expertise with communication skills to inspire positive change. Whether working with patients or addressing larg groups, I thrive on connecting with people and motivating them towards their goals. My mission is to promote health, resilience and confidence in every aspects of life.
+            </p>
+            <div class="tab-title">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+                <p class="tab-links" onclick="opentab('passion')">Passion</p>
+            </div>
+<div class="tab-contents active-tab" id="skills">
+    <ul>
+        <li><span>Soft Skills</span><br>
+        Communication : <p class="def">The ability to convey ideas, thoughs, and information clearly to individuals or groups enhancing understanging and collaboration.</p> <br>
+        Team work: <p class="def">Working effectively with others to achieve common goals, while fostering cooperation and a supportive work environment.</p><br>
+        Adaptability:<p class="def"> Being flexible and able to adjust to new challenges, environments or unexpected changes with ease.</p> <br>
+        Designing:<p class="def">Creative thinking and the ability to olaan, conceptualize, and create strucured processes or solutions effectively.</p>
+        </li>
+        <li>
+        <span>Hard Skills</span> <br>
+        Kineso-taping :<p class="def">The application of elastic therapeutic tape to support muscles, joints and ligaments, helping reduce pain and inflammation while improving movement.</p><br>
+        Gait Traing : <p class="def">Thechniques to help individuals improve their walking pattern, balance and mobility often used in physical rehabilitation.</p><br>
+        Pelvic floor: <p class="def">Specialized knowledge of exercises and treatments to strengthen pelvic floor muscles, improving issues like incontiences and core stability.</p><br>
+        Consipation & Coccydynia:<p class="def">Skills to address and manage constipation and coccydynia through physical therapy interventions and lifestyle recommendations.</p>
+        </li>
+    </ul>
+</div>
+
+<div class="tab-contents" id="education">
+    <ul>
+        <li><span>Bechelor Of Pthysiotherapy : 2020-2025</span><br> <br>
+        SNS COLLEGE OF PHYSIOTHERAPY , COIMBATORE. <br>
+        CGPA-7.5 <BR>
+        </li>
+        <li>
+        <span>HSC  : 2018-2020</span> <br> <br>
+      ST. JOSEPH'S HIGHER SECONDARY SCHOOL, MULAGUMOODU <br>
+      62.7%
+        </li> 
+        <li>
+            <span>SSLC : 2018</span> <br>
+V.N MEMORIAL MATRIC HIGHER SECONDARY SCHOOL, MOOLACHAL. <br>
+84%
+        </li>
+    </ul> 
+</div>
+
+<div class="tab-contents" id="passion">
+    <ul>
+        <li><span>Specialized in Neurology</span><br>
+        </li>
+        <li>
+        <span>Public speaker</span> <br>
+        </li>
+
+        <li>
+            <span>Student Motivator</span> <br>
+            </li>
+    </ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<script>
+let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector(".navbar")
+menu.onclick = () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active')
+}
+
+var tablinks = document.getElementsByClassName('tab-links');
+var tabcontents = document.getElementsByClassName('tab-contents')
+function opentab(tabname){
+    for(tablink of tablinks){
+        tablink.classList.remove('active-link')
+    }
+    for(tabcontent of tabcontents){
+        tabcontent.classList.remove('active-tab')
+    }
+event.currentTarget.classList.add('active-link')
+document.getElementById(tabname).classList.add("active-tab")
+}
+
+
+
+</script>
+</body>
+</html>

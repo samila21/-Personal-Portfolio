@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>my services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+@import url(‘https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap’);
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;border: none;
+    text-transform: capitalize; transition: all .2s linear;
+    
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:5.5rem;
+    scroll-behavior: smooth; 
+   
+}
+
+
+header{
+    position: fixed;
+    top: 0;left: 0;right: 0;
+background: white;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    
+}
+header .logo{
+    color: var(--white);
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: red; 
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .6rem 1.9rem;
+    color: red; font-weight: bolder;
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+   background: red;
+   box-shadow:0 0 50px  rgba(255,0,0);
+}
+
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 50%;
+    background:black;
+
+}
+
+header .icons i:hover,
+header .icons a:hover{
+color: white;
+background: red;
+box-shadow:0 0 50px  rgba(255,0,0);
+
+}
+
+header .icons #menu-bars{
+    display: none;
+}
+
+/* Services Section */
+
+
+h1{
+    font-size: 5rem;
+    margin-top: 7.5rem; text-align: center;
+}
+h1 .ser{
+    color: red;
+}
+.sub-title{
+    font-size: 3.5rem; margin-left: 20px; color: red;
+}
+#services{
+    padding: 30px 0;
+}
+.service-list{
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px; margin-top: 50px; cursor: pointer;
+}
+.service-list div{
+    background: rgb(246, 245, 243);
+    padding: 40px;
+    font-size: 13px; font-weight: 500; color: black; margin: 20px;
+    box-shadow: 10px 0 5px 0 gray;
+}
+.service-list div:hover{
+    background: white;
+}
+
+
+.service-list div #physio{
+    font-size: 3rem; margin-bottom: 20px;
+}
+.service-list div h2{
+    font-size: 3.2rem; margin-bottom: 20px; color: red;
+}
+
+.service-list div h3{
+    color: rgb(32, 179, 237); font-size: 2rem; margin-bottom: 20px;
+}
+
+.service-list div a {
+    font-size: 1.5rem; color: red;
+}
+
+.service-list div a i{
+    font-size: 1.5rem; margin-bottom: 10px; color: black; padding: 10px;
+}
+
+.service-list div p{
+    font-size: 1.3rem; color: gray; margin-top: 10px;
+}
+
+
+
+#certificate{
+    padding: 30px 0;
+}
+
+#certificate .sub-title{
+    font-size: 3.5rem; margin-left: 20px; color: red;
+}
+.certificate-list{
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px; margin-top: 50px; cursor: pointer; margin-right: 50px;
+}
+.certificate-list div{
+    background: rgb(246, 245, 243);
+    padding: 40px;
+    font-weight: 500; color: black; margin: 20px;
+    box-shadow: 3px 0 3px 3px gray; width: 100%;
+}
+
+.certificate-list div h2{
+    font-size: 2.4rem; margin-bottom: 20px; color: red;
+}
+
+.certificate-list div p{
+    font-size: 1.4rem; color: gray;
+}
+.certificate-list div  .gcert{
+    margin-top: 50px; padding: 10px; border: 2px solid white;
+    border-radius: 20px; font-size: 1.4rem; background:white; color: red; font-weight: bold;
+}
+
+.certificate-list div  .gcert:hover{
+    background-color: red; color: white;
+}
+
+div:hover{
+    background: white;
+}
+
+
+
+
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+
+    }
+    header{
+        padding: 1rem 2rem;
+
+    }
+    section{
+        padding: .2rem;
+
+        margin: 4rem;
+    }
+}
+
+
+
+
+@media(max-width:768px){
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: rgba(0,0,0,.2) solid;
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    }
+
+  
+header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+    header .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem ;
+        background: #eee;
+        font-size: 2rem;
+
+    }
+
+#services div h2{
+    font-size: 1.8rem;
+}
+
+}
+
+    </style>
+</head>
+<body>
+    <!---Header Section-->
+
+    <header>
+        <a href="#" class="logo"> <i class="fas-fa-untensils">Jerlin J</i></a>
+      <nav class="navbar">
+          <a href="jerlin.html">Home</a>
+          <a href="jabout.html">About</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="service.html">Service</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+      </div>
+      </header>
+
+<!--Service Section-->
+
+<h1>My <span class="ser">Service</span></h1>
+
+<div id="services">
+<div class="containerr">
+    <h4 class="sub-title">INTERNSHIP</h4>
+        <div class="service-list">
+
+<div>
+    <i class="fa-solid fa-wheelchair-move" id="physio"></i>
+    <h2>Musculoskeletal Rehabilitation</h2>
+    <h3>Kinergy Physio Redefind</h3>
+    <a href="#" class="date"><i class="fa-solid fa-calendar-days"></i>06/2023-08/2023</a> 
+     <a href="#" class="place"><i class="fa-solid fa-location-dot"></i>Coimbatore,India.</a> 
+    <p class="def1">Skills which gained are myofascial release and trigger point release, IASTM, dry needling and various advanced technologies. There I gained much knowlwdge about musculoskeletal conditions and their rehab.</p>
+</div>
+
+<div>
+    <i class="fa-solid fa-wheelchair-move" id="physio"></i>
+    <h2>Neuro Rehabilitation</h2>
+    <h3>Shree Siva Hospital</h3>
+    <a href="#" class="date"><i class="fa-solid fa-calendar-days"></i>11/2023-12/2023</a> 
+     <a href="#" class="place"><i class="fa-solid fa-location-dot"></i>Coimbatore,India.</a> 
+    <p class="def1">I utilized much knowledge about neurological condition and their rehabilitation.. There I treated stroke patients, transvers myelities, spinal cord injury cases and learned its management. </p>
+</div>
+
+<div>
+    <i class="fa-solid fa-wheelchair-move" id="physio"></i>
+    <h2>Orthopaedic </h2>
+    <h3>Thiraviam Orthopaedic Hospital</h3>
+    <a href="#" class="date"><i class="fa-solid fa-calendar-days"></i>05/2024-06/2024</a> 
+     <a href="#" class="place"><i class="fa-solid fa-location-dot"></i>Nagercoil,India.</a> 
+    <p class="def1">Skills gained which includes acl, RTA cases rehab, multiple fraction rehab, and mostly the TKR rehabilitation. Those days I got an wonderful oppurtunities with orthopaedic sugeon's and utilized their clinical knowledge.</p>
+</div>
+</div> 
+</div>
+</div>
+ 
+
+<!--Certification Section-->
+
+<div class="certificate" id="certificate">
+<div class="containerr">
+<h4 class="sub-title">
+          CERTIFICATION          
+</h4>
+<div class="certificate-list">
+<div>
+    <i class="fa-solid fa-certificate" id="physio"></i>
+    <h2>7th KYU Orange of Karate</h2>
+
+    <p class="def1"></p>
+    <a href="https://drive.google.com/file/d/1nVdvdt3b8H0HmXnac_2Vx56L_A1Qlcsa/view?usp=drive_link" class="gcert">Get Certificate</a>
+</div>
+
+<div>
+    <i class="fa-solid fa-certificate" id="physio"></i>
+    <h2>6th KYU Yellow of Karate</h2>
+ 
+    <p class="def1"></p>
+    <a href="https://drive.google.com/file/d/1AjCtCQXgdMEAgGRQ_jxwmfMieoLfF2Mj/view?usp=drive_link" class="gcert">Get Certificate</a>
+</div>
+
+
+<div>
+    <i class="fa-solid fa-certificate" id="physio"></i>
+    <h2>AADUKALAM-2023</h2>
+   
+    <p class="def1">.</p>
+    <a href="https://drive.google.com/file/d/1gHO3ZbrdKkyR11SMcd6hcuHItx7mi1a_/view?usp=drive_link" class="gcert">Get Certificate</a>
+</div>
+
+<div>
+    <i class="fa-solid fa-certificate" id="physio"></i>
+    <h2>Basic Microbiology </h2>
+  
+    <p class="def1"></p>
+    <a href="https://drive.google.com/file/d/1VK-sl8a9Q3UAM-H1YK77TmcCcwKs0ykQ/view?usp=drive_link" class="gcert">Get Certificate</a>
+</div>
+
+
+
+
+<div>
+    <i class="fa-solid fa-certificate" id="physio"></i>
+    <h2>Primary care and general neurology setting</h2>
+    
+    <p class="def1">.</p>
+    <a href="https://drive.google.com/file/d/1E3--wA_dr7eZiDRkIgfYR7lZsdK6-t3I/view?usp=drive_link" class="gcert">Get Certificate</a>
+</div>
+
+
+
+<div>
+    <i class="fa-solid fa-certificate" id="physio"></i>
+    <h2>Design thinking co-creator</h2>
+  
+    <p class="def1"></p>
+    <a href="https://drive.google.com/file/d/1ceu8_RPeNmZsh96FCvs_mBhgn0kVDxPk/view?usp=drive_link" class="gcert">Get Certificate</a>
+</div>
+
+
+<div>
+    <i class="fa-solid fa-certificate" id="physio"></i>
+    <h2>Global design thinking challenge</h2>
+ 
+    <p class="def1"></p>
+    <a href="https://drive.google.com/file/d/1918K7Y58vs1oCbwK2m1vo3LpWc0FB7Ti/view?usp=drive_link" class="gcert">Get Certificate</a>
+</div>
+
+<div>
+    <i class="fa-solid fa-certificate" id="physio"></i>
+    <h2>physio Arise</h2>
+   
+     <p class="def1"></p>
+     <a href="https://drive.google.com/file/d/1_8aqkmvwJaj1PrXxo7lfl1vEHDHVHyCB/view?usp=drive_link" class="gcert">Get Certificate</a>
+    </div>
+
+    <div>
+        <i class="fa-solid fa-certificate" id="physio"></i>
+        <h2>SNS KHEL UTSAV</h2>
+        
+         <p class="def1"></p>
+         <a href="https://drive.google.com/file/d/1Ovk7Yzt-NSMxmBxwod8JJ0BermI0u9hu/view?usp=drive_link" class="gcert">Get Certificate</a>
+        </div>
+
+
+        <div>
+            <i class="fa-solid fa-certificate" id="physio"></i>
+            <h2>Nation service scheme</h2>
+        
+             <p class="def1"></p>
+             <a href="https://drive.google.com/file/d/1r1DBHtRfZCCRS6eOgt0zLi0AXN3-4Hov/view?usp=drive_link" class="gcert">Get Certificate</a>
+            </div>
+
+    </div>
+</div>
+</div>
+
+
+
+
+<script>
+
+
+let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector(".navbar")
+
+menu.onclick = () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active')
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+@import url(‘https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap’);
+
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;border: none;
+    text-transform: capitalize; transition: all .2s linear;
+    
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:5.5rem;
+    scroll-behavior: smooth; 
+   
+}
+
+/* -------------------------------------------------header section------------------------------- */
+
+header{
+    position: fixed;
+    top: 0;left: 0;right: 0;
+background: white;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    
+}
+header .logo{
+    color: var(--white);
+    font-size: 2.9rem;
+    font-weight: bolder;
+    color: red; 
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .6rem 1.9rem;
+    color: red; font-weight: bolder;
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+   background: red;
+   box-shadow:0 0 50px  rgba(255,0,0);
+}
+
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 50%;
+    background:black;
+
+}
+
+header .icons i:hover,
+header .icons a:hover{
+color: white;
+background: red;
+box-shadow:0 0 50px  rgba(255,0,0);
+
+}
+
+
+header .icons #menu-bars{
+    display: none;
+}
+
+#contact{
+    margin-top: 10rem;
+}
+
+
+
+.row{
+    display: flex; flex-wrap: wrap; 
+
+}
+
+.contact-left{
+
+    flex-basis: 35%;
+
+}
+.contact-left .sub-title{
+font-size: 4rem;
+margin-left: 15px;
+
+font-weight: bold;
+color: red;
+}
+
+.contact-right{
+    flex-basis: 60%;
+    
+}
+.contact-left p {
+margin-top: 30px; font-size: 2rem; margin-left: 25px;
+}
+.contact-left p i{
+    color: red;
+    margin-left: 25px;
+    font-size: 25px;
+    padding: 10px;
+}
+.contact-left  a i{
+    color: red; margin-left: 25px; font-size: 20px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-left: 25px;
+    display: inline-block;
+}
+.social-icons a i{
+    font-size: 30px;  transition: 1s;
+}
+
+.social-icons a i:hover{
+    color: black; transform: translateY(-5px); 
+}
+
+
+.contact-right form{
+    width: 100%;
+
+}
+form input, form textarea{
+    width: 100%; border: 2px solid black;
+    outline: none;
+   padding: 15px;
+   margin: 15px 0;
+   color: black; font-size: 18px;
+   border-radius: 10px; background: rgb(246, 203, 203);
+}
+
+
+.btn{
+    margin-top: 1.6rem;
+    display: inline-block;
+    font-size: 1.8rem;
+    color:white;
+    background: red;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem ; transition: 1s;
+}
+
+
+.btn:hover{
+    background:red; color:white;
+    transform: translateY(10px);
+   
+   
+}
+form btn2{
+    padding: 14px 50px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+#msg{
+    color: rgb(1, 30, 1); margin-top: -40px; display: block;
+}
+
+
+
+
+
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+
+    }
+    header{
+        padding: 1rem 2rem;
+
+    }
+    section{
+        padding: .2rem;
+
+        margin: 4rem;
+    }
+}
+
+
+
+
+@media(max-width:768px){
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: rgba(0,0,0,.2) solid;
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    }
+
+  
+header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+    header .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem ;
+        background: #eee;
+        font-size: 2rem;
+
+    }
+#contact  .sub-title{
+    font-size: 3rem;
+}
+#contact .contact-left p {
+    font-size: 1.5rem; margin-left: 15px;
+}
+#contact  .contact-left p i{
+    font-size: 1.3rem;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+    <header>
+        <a href="#" class="logo"> <i class="fas-fa-untensils">Jerlin J</i></a>
+      <nav class="navbar">
+          <a href="jerlin.html">Home</a>
+          <a href="jabout.html">About</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="service.html">Service</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+      </div>
+      </header>
+
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <div class="sub-title">
+                    Contact Me
+                </div>
+               <p> jerlinphysio@gmail.com</p>
+               <p>  +91 9342560552</p>
+               <div class="social-icons">
+                <a href="https://www.linkedin.com/in/js-jerlin"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:jerlinphysio.com"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://www.instagram.com/__jerl_ee_?igsh=eDBqMGljYTJ4a2M3"><i class="fa-brands fa-instagram"></i></a>
+                <a href="9585885499"><i class="fa-brands fa-whatsapp"></i></a>
+               </div>
+            </div>
+
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+<input type="text" name="Name" placeholder="Your Name" required>
+<input type="email" name="Email" placeholder="Your Email" required>
+<textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+<button name="Submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <script>
+
+ let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector(".navbar")
+
+menu.onclick = () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active')
+}
+    </script>
+
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxBfttYP1NUjkDoc5y2pM3hCLYQ3T_qXErlmcKdfboDLs1PfsiwQ0BWs7dcLz2kG0RWrg/exec'
+    const form = document.forms['submit-to-google-sheet']
+  const msg = document.getElementById("msg")
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+
+  </script>
+
+</body>
+</html>

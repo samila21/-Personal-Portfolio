@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+<style>
+@import url(‘https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap’);
+*{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;border: none;
+    text-transform: capitalize; transition: all .2s linear;
+    
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top:5.5rem;
+    scroll-behavior: smooth; 
+   
+}
+header{
+    position: fixed;
+    top: 0;left: 0;right: 0;
+
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    
+}
+header .logo{
+    color: var(--white);
+    font-size: 2.9rem;
+    font-weight: bolder;
+    color: red; 
+}
+
+header .navbar a{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .6rem 1.9rem;
+    color: red; font-weight: bolder;
+}
+
+header .navbar a.active,
+header .navbar a:hover{
+    color: #fff;
+   background: red;
+   box-shadow:0 0 50px  rgba(255,0,0);
+}
+
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: .5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: white;
+    border-radius: 50%;
+    background:black;
+
+}
+
+header .icons i:hover,
+header .icons a:hover{
+color: white;
+background: red;
+box-shadow:0 0 50px  rgba(255,0,0);
+
+}
+
+
+header .icons #menu-bars{
+    display: none;
+}
+
+
+/* carousel */
+.carousel{
+    Height: 100vh;
+   
+    Width: 100vw;
+    Overflow: hidden;
+    Position: relative;
+}
+.carousel .list .item{
+    Width: 100%;
+    Height: 100%;
+    Position: absolute;
+    Inset: 0 0 0 0;
+}
+.carousel .list .item img{
+    Width: 100%;
+    Height: 100%;
+    Object-fit: cover;
+}
+.carousel .list .item .content{
+    Position: absolute;
+    Top: 20%;
+    Width: 1140px;
+    Max-width: 80%;
+    Left: 50%;
+    Transform: translateX(-50%);
+    Padding-right: 30%;
+    Box-sizing: border-box;
+    Color: red; font-weight: bold;
+  
+}
+.carousel .list .item .author{
+    Font-weight: bold;
+    Letter-spacing: 10px;
+}
+.carousel .list .item .title,
+.carousel .list .item .topic{
+    Font-size: 5em;
+    Font-weight: bold;
+    Line-height: 1.3em;
+}
+.carousel .list .item .topic{
+    Color: #f1683a;
+}
+.carousel .list .item .buttons{
+    Display: grid;
+    Grid-template-columns: repeat(2, 130px);
+    Grid-template-rows: 40px;
+    Gap: 5px;
+    Margin-top: 20px;
+}
+.carousel .list .item .buttons button{
+    Border: none;
+    Background-color:red;
+    Letter-spacing: 3px;
+    Font-family: Poppins;
+    Font-weight: 500;
+    color: white;
+}
+.carousel .list .item .buttons button:nth-child(2){
+    Background-color: transparent;
+    Border: 1px solid #fff;
+    Color:black;
+}
+/* thumbail */
+.thumbnail{
+    Position: absolute;
+    Bottom: 50px;
+    Left: 50%;
+    Width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+.thumbnail .item{
+    Width: 150px;
+    Height: 220px;
+    Flex-shrink: 0;
+    Position: relative;
+}
+.thumbnail .item img{
+    Width: 100%;
+    Height: 100%;
+    Object-fit: cover;
+    Border-radius: 20px;
+}
+.thumbnail .item .content{
+    Color:red;
+    Position: absolute;
+    Bottom: 10px;
+    Left: 10px;
+    Right: 10px;
+}
+.thumbnail .item .content .title{
+    Font-weight: 500;
+}
+.thumbnail .item .content .description{
+    Font-weight: 300;
+}
+/* arrows */
+.arrows{
+    Position: absolute;
+    Top: 80%;
+    Right: 52%;
+    z-index: 100;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    Width: 40px;
+    Height: 40px;
+    Border-radius: 50%;
+    Background-color: red;
+    Border: none;
+    Color: #fff;
+    Font-family: monospace;
+    Font-weight: bold;
+    Transition: .5s;
+}
+.arrows button:hover{
+    Background-color: #fff;
+    Color: #000;
+}
+
+/* animation */
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+
+/* animation text in first item */
+
+.carousel .list .item:nth-child(1) .content .author,
+.carousel .list .item:nth-child(1) .content .title,
+.carousel .list .item:nth-child(1) .content .topic,
+.carousel .list .item:nth-child(1) .content .des,
+.carousel .list .item:nth-child(1) .content .buttons
+{
+    Transform: translateY(50px);
+    Filter: blur(20px);
+    Opacity: 0;
+    Animation: showContent .5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    To{
+        Transform: translateY(0px);
+        Filter: blur(0px);
+        Opacity: 1;
+    }
+}
+.carousel .list .item:nth-child(1) .content .title{
+    Animation-delay: 1.2s!important;
+}
+.carousel .list .item:nth-child(1) .content .topic{
+    Animation-delay: 1.4s!important;
+}
+.carousel .list .item:nth-child(1) .content .des{
+    Animation-delay: 1.6s!important;
+}
+.carousel .list .item:nth-child(1) .content .buttons{
+    Animation-delay: 1.8s!important;
+}
+/* create animation when next click */
+.carousel.next .list .item:nth-child(1) img{
+    Width: 150px;
+    Height: 220px;
+    Position: absolute;
+    Bottom: 50px;
+    Left: 50%;
+    Border-radius: 30px;
+    Animation: showImage .5s linear 1 forwards;
+}
+@keyframes showImage{
+    To{
+        Bottom: 0;
+        Left: 0;
+        Width: 100%;
+        Height: 100%;
+        Border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1){
+    Overflow: hidden;
+    Animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.prev .list .item img{
+    z-index: 100;
+}
+@keyframes showThumbnail{
+    From{
+        Width: 0;
+        Opacity: 0;
+    }
+}
+.carousel.next .thumbnail{
+    Animation: effectNext .5s linear 1 forwards;
+}
+
+@keyframes effectNext{
+    From{
+        Transform: translateX(150px);
+    }
+}
+
+/* running time */
+
+.carousel .time{
+    Position: absolute;
+    z-index: 1000;
+    width: 0%;
+    height: 3px;
+    background-color: #f1683a;
+    left: 0;
+    top: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time{
+    Animation: runningTime 3s linear 1 forwards;
+}
+@keyframes runningTime{
+    From{ width: 100%}
+    To{width: 0}
+}
+
+
+/* prev click */
+
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img{
+    Animation: outFrame 0.5s linear 1 forwards;
+    Position: absolute;
+    Bottom: 0;
+    Left: 0;
+}
+@keyframes outFrame{
+    To{
+        Width: 150px;
+        Height: 220px;
+        Bottom: 50px;
+        Left: 50%;
+        Border-radius: 20px;
+    }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1){
+    Overflow: hidden;
+    Opacity: 0;
+    Animation: showThumbnail .5s linear 1 forwards;
+}
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    Pointer-events: none;
+}
+.carousel.prev .list .item:nth-child(2) .content .author,
+.carousel.prev .list .item:nth-child(2) .content .title,
+.carousel.prev .list .item:nth-child(2) .content .topic,
+.carousel.prev .list .item:nth-child(2) .content .des,
+.carousel.prev .list .item:nth-child(2) .content .buttons
+{
+    Animation: contentOut 1.5s linear 1 forwards!important;
+}
+
+@keyframes contentOut{
+    To{
+        Transform: translateY(-150px);
+        Filter: blur(20px);
+        Opacity: 0;
+    }
+}
+
+
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+
+    }
+    header{
+        padding: 1rem 2rem;
+
+    }
+    section{
+        padding: .2rem;
+
+        margin: 4rem;
+    }
+}
+
+
+
+
+@media(max-width:768px){
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border-top: rgba(0,0,0,.2) solid;
+        border-bottom: .1rem solid rgba(0,0,0,.2);
+        padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+    }
+
+  
+header .navbar.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+    header .navbar a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem ;
+        background: #eee;
+        font-size: 2rem;
+
+    }
+
+    
+
+}
+
+
+.home .home-slider .slide .content h3{
+  
+    font-size: 5rem;
+}
+
+
+
+
+@media(max-width:991px){
+    html{
+        font-size: 60%;
+        
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"> <i class="fas-fa-untensils">Jerlin J</i></a>
+      <nav class="navbar">
+          <a href="jerlin.html">Home</a>
+          <a href="jabout.html">About</a>
+          <a href="achievements.html">Achievements</a>
+          <a href="service.html">Service</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+      </nav>
+      <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+      </div>
+      </header>
+
+    <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+
+            <!---------------------------------one---------------------------------------------->
+            <div class="item">
+                <img src="Images/g1.jpg">
+                <div class="content">
+                    <div class="title">motivational speech to orphanage student</div>
+                    
+                    
+                </div>
+            </div>
+
+            <!--------------------------------two--------------------------------------->
+            <div class="item">
+                <img src="Images/g2.jpg">
+                <div class="content">
+                    <div class="title">State level sport KABADDI Runner</div>
+                    
+                </div>
+            </div>
+
+<!------------------------------three-------------------------------------------------------->
+
+            <div class="item">
+                <img src="Images/g3.jpg">
+                <div class="content">
+                    <div class="title">INTERNSHIP</div>
+                   
+                </div>
+            </div>
+
+<!-------------------------------four----------------------------------------------------------->
+
+            <div class="item">
+                <img src="Images/g4.jpg">
+                <div class="content">
+                    <div class="title">NATIONAL LEVEL DEBATE 2023</div>
+                    
+                </div>
+            </div>
+
+<!--------------------------five-------------------------------------------------->
+
+            <div class="item">
+                <img src="Images/g5.jpg">
+                <div class="content">
+                    <div class="title">Student to motivate </div>
+                   
+                </div>
+            </div>
+
+<!-----------------------------six------------------------------------------------>
+
+            <div class="item">
+                <img src="Images/g6.jpg">
+                <div class="content">
+                    <div class="title">sNS college celebrate valentines day </div>
+                  
+                </div>
+            </div>
+
+<!------------------------------seven-------------------------------------------------->
+
+            <div class="item">
+                <img src="Images/g7.jpg">
+                <div class="content">
+                    <div class="title">va thamizha va tV show</div>
+                    
+                </div>
+            </div>
+
+<!-------------------------------eight------------------------------------------------>
+
+            <div class="item">
+                <img src="Images/g1.jpg">
+                <div class="content">
+                    <div class="title"></div>
+                  
+                </div>
+            </div>
+        </div>
+
+
+        <!-- list thumnail -->
+
+
+        <div class="thumbnail">
+
+
+<!-----one------>
+
+            <div class="item">
+                <img src="Images/g1.jpg">
+            </div>
+
+
+<!--------two------------>
+
+
+            <div class="item">
+                <img src="Images/g2.jpg">
+              
+            </div>
+
+<!--------three------------>
+
+            <div class="item">
+                <img src="Images/g3.jpg">
+                
+            </div>
+
+<!--------four------------>
+
+            <div class="item">
+                <img src="Images/g4.jpg">
+               
+            </div>
+
+<!--------five------------>
+
+            <div class="item">
+                <img src="Images/g5.jpg">
+               
+            </div>
+
+<!--------six------------>
+
+
+            <div class="item">
+                <img src="Images/g6.jpg">
+               
+            </div>
+<!----------seven------------>
+
+            <div class="item">
+                <img src="Images/g7.jpg">
+           
+            </div>
+
+<!--------eight------------>
+
+            <div class="item">
+                <img src="Images/g1.jpg">
+               
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev"> < </button>
+            <button id="next"> > </button>
+        </div>
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
+
+    <script>
+
+let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector(".navbar")
+
+menu.onclick = () =>{
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active')
+}
+
+//step 1: get DOM
+let nextDom = document.getElementById("next");
+let prevDom = document.getElementById("prev");
+
+let carouselDom = document.querySelector(".carousel");
+let SliderDom = carouselDom.querySelector(".carousel .list");
+let thumbnailBorderDom = document.querySelector(".carousel .thumbnail");
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll(".item");
+let timeDom = document.querySelector(".carousel .time");
+
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 7000;
+
+nextDom.onclick = function(){
+    showSlider("next");    
+}
+
+prevDom.onclick = function(){
+    showSlider("prev");    
+}
+let runTimeOut;
+let runNextAuto = setTimeout(() => {
+    Next.click();
+}, timeAutoNext)
+function showSlider(type){
+    let  SliderItemsDom = SliderDom.querySelectorAll(".carousel .list .item");
+    let thumbnailItemsDom = document.querySelectorAll(".carousel .thumbnail .item");
+    
+    if(type === "next"){
+        SliderDom.appendChild(SliderItemsDom[0]);
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        carouselDom.classList.add("next");
+    }
+    else{
+        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+        carouselDom.classList.add("prev");
+    }
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+        carouselDom.classList.remove("next");
+        carouselDom.classList.remove("prev");
+    }, timeRunning);
+
+    clearTimeout(runNextAuto);
+    runNextAuto = setTimeout(() => {
+        next.click();
+    }, timeAutoNext)
+}
+
+    </script> 
+</body>
+</html>
+
+
+
+
+
+
